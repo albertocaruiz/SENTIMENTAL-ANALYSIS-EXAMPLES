@@ -27,6 +27,8 @@ def readInput():
 			f1 = f1[:-1]
 			f1 = f1.split(',')
 			f1 = [int(i) for i in f1]
+			if f1[0] == 0:
+				continue
 			all_instances.append(f1)
 
 	return all_instances
@@ -37,7 +39,7 @@ def binary(i): # to ignore -1/-2 or 1/2
 	else:
 		return -1
 
-no_iter = 20
+no_iter = 50
 avg_acc = []
 while(no_iter > 0):
 	no_iter -=1
