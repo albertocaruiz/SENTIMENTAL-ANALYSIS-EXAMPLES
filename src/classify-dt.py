@@ -2,7 +2,7 @@ import numpy as np
 import random
 import os
 from sklearn import linear_model
-from sklearn import svm
+from sklearn.ensemble import RandomForestClassifier
 
 
 
@@ -57,7 +57,7 @@ while(no_iter > 0):
 	Y = np.array(train_set[:,-1])
 	Y = [binary(i) for i in Y]
 
-	clf = svm.SVC()
+	clf =  RandomForestClassifier(n_estimators=10)
 	clf.fit(X, Y)
 	prediction = clf.predict(test_set[:,:-1])
 	prediction = [binary(i) for i in prediction]
